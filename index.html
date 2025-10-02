@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MALU — Visão Rápida</title>
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#ffffff; --accent:#6f6be6; --accent2:#ff9f43; --accent3:#7be495; --muted:#6b7280; --glass: rgba(255,255,255,0.7);
+      --shadow: 0 8px 20px rgba(15,23,42,0.06);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#eef3fb);color:#111827}
+    .wrap{max-width:1200px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8b8bf0);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:var(--shadow)}
+    h1{font-size:22px;margin:0}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+
+    /* diagram area */
+    .diagram{display:flex;gap:18px;align-items:flex-start;justify-content:center;padding:12px}
+    svg{max-width:100%;height:auto}
+
+    .section-head{display:flex;align-items:center;justify-content:space-between}
+    .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+    .phase{border-radius:8px;padding:12px}
+    .phase.plan{background:rgba(111,107,230,0.08);border:1px solid rgba(111,107,230,0.12)}
+    .phase.build{background:rgba(255,159,67,0.06);border:1px solid rgba(255,159,67,0.12)}
+    .phase.finish{background:rgba(123,228,149,0.06);border:1px solid rgba(123,228,149,0.12)}
+
+    .flow{display:flex;gap:8px;align-items:center}
+    .box{padding:8px 12px;border-radius:6px;background:white;border:1px solid #e6e9ef;min-width:82px;text-align:center;font-size:13px}
+    .small{font-size:12px;color:var(--muted)}
+
+    footer{margin-top:22px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:920px){.grid{grid-template-columns:1fr}.cols{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">MALU</div>
+      <div>
+        <h1>MALU — Método iterativo</h1>
+        <p class="lead">Explicação visual e textual do modelo: fases macro + ciclo micro dentro de cada fase.</p>
+      </div>
+    </header>
+
+    <main class="grid" style="margin-top:18px">
+      <section class="card">
+        <div class="section-head">
+          <h2 style="font-size:16px;margin:0">Visão geral (gráficos)</h2>
+          <div class="small">Estático / para apresentação</div>
+        </div>
+
+        <div class="diagram" aria-hidden="true">
+          <!-- Left: Macro phases -->
+          <svg width="260" height="260" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="244" height="244" rx="6" fill="#fff" stroke="#e6e9ef"/>
+            <rect x="64" y="46" width="132" height="36" rx="6" fill="#8b8bf0"/>
+            <text x="130" y="70" font-size="12" fill="white" font-family="Inter" text-anchor="middle">Planejar</text>
+            <rect x="64" y="102" width="132" height="36" rx="6" fill="#ff9f43"/>
+            <text x="130" y="126" font-size="12" fill="white" text-anchor="middle">Construir</text>
+            <rect x="64" y="158" width="132" height="36" rx="6" fill="#7be495"/>
+            <text x="130" y="182" font-size="12" fill="white" text-anchor="middle">Finalizar</text>
+            <path d="M130 82 L130 102" stroke="#9aa4b2" stroke-width="2" marker-end="url(#a)"/>
+            <path d="M130 138 L130 158" stroke="#9aa4b2" stroke-width="2" marker-end="url(#a)"/>
+            <defs><marker id="a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#9aa4b2"/></marker></defs>
+          </svg>
+
+          <!-- Center: Micro cycle -->
+          <svg width="360" height="160" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="348" height="148" rx="6" fill="#fff" stroke="#e6e9ef"/>
+            <!-- nodes -->
+            <g transform="translate(28,46)">
+              <rect width="88" height="36" rx="6" fill="#5b86e5" />
+              <text x="44" y="22" font-size="12" fill="white" text-anchor="middle" dy="4">Entender</text>
+            </g>
+            <g transform="translate(128,46)">
+              <rect width="88" height="36" rx="6" fill="#4aa3e0" />
+              <text x="44" y="22" font-size="12" fill="white" text-anchor="middle" dy="4">Explorar</text>
+            </g>
+            <g transform="translate(228,46)">
+              <rect width="68" height="36" rx="6" fill="#ff9f43" />
+              <text x="34" y="22" font-size="12" fill="white" text-anchor="middle" dy="4">Criar</text>
+            </g>
+            <g transform="translate(308,46)">
+              <rect width="38" height="36" rx="6" fill="#2fb56a" />
+              <text x="19" y="22" font-size="11" fill="white" text-anchor="middle" dy="4">Compart.</text>
+            </g>
+            <!-- arrows -->
+            <path d="M116 64 L128 64" stroke="#9aa4b2" stroke-width="2" marker-end="url(#b)"/>
+            <path d="M216 64 L228 64" stroke="#9aa4b2" stroke-width="2" marker-end="url(#b)"/>
+            <path d="M296 64 L308 64" stroke="#9aa4b2" stroke-width="2" marker-end="url(#b)"/>
+            <path d="M160 46 C160 20, 96 20, 96 46" stroke="#9aa4b2" stroke-width="2" fill="none" marker-end="url(#b)"/>
+            <defs>
+              <marker id="b" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#9aa4b2"/></marker>
+            </defs>
+          </svg>
+
+          <!-- Right: MALU full (phases with micro inside) -->
+          <svg width="360" height="260" viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="348" height="248" rx="6" fill="#fff" stroke="#e6e9ef"/>
+            <!-- top: plan -->
+            <g transform="translate(20,18)">
+              <rect width="320" height="66" rx="6" fill="#8b8bf0" opacity="0.12" stroke="#e6e9ef"/>
+              <text x="14" y="22" font-size="12" fill="#333">Planejar</text>
+              <g transform="translate(10,30)">
+                <rect width="82" height="28" rx="4" fill="#5b86e5" />
+                <text x="41" y="18" font-size="11" fill="white" text-anchor="middle">Entender</text>
+                <rect x="96" width="82" height="28" rx="4" fill="#4aa3e0" />
+                <text x="137" y="18" font-size="11" fill="white" text-anchor="middle">Explorar</text>
+                <rect x="200" width="64" height="28" rx="4" fill="#ff9f43" />
+                <text x="232" y="18" font-size="11" fill="white" text-anchor="middle">Criar</text>
+                <rect x="268" width="44" height="28" rx="4" fill="#2fb56a" />
+                <text x="290" y="18" font-size="10" fill="white" text-anchor="middle">Compart.</text>
+              </g>
+            </g>
+            <!-- middle: build -->
+            <g transform="translate(20,102)">
+              <rect width="320" height="66" rx="6" fill="#ff9f43" opacity="0.08" stroke="#e6e9ef"/>
+              <text x="14" y="22" font-size="12" fill="#333">Construir</text>
+              <g transform="translate(10,30)">
+                <rect width="82" height="28" rx="4" fill="#5b86e5" />
+                <text x="41" y="18" font-size="11" fill="white" text-anchor="middle">Entender</text>
+                <rect x="96" width="82" height="28" rx="4" fill="#4aa3e0" />
+                <text x="137" y="18" font-size="11" fill="white" text-anchor="middle">Explorar</text>
+                <rect x="200" width="64" height="28" rx="4" fill="#ff9f43" />
+                <text x="232" y="18" font-size="11" fill="white" text-anchor="middle">Criar</text>
+                <rect x="268" width="44" height="28" rx="4" fill="#2fb56a" />
+                <text x="290" y="18" font-size="10" fill="white" text-anchor="middle">Compart.</text>
+              </g>
+            </g>
+            <!-- bottom: finish -->
+            <g transform="translate(20,186)">
+              <rect width="320" height="56" rx="6" fill="#7be495" opacity="0.08" stroke="#e6e9ef"/>
+              <text x="14" y="20" font-size="12" fill="#333">Finalizar</text>
+              <g transform="translate(10,28)">
+                <rect width="82" height="24" rx="4" fill="#5b86e5" />
+                <text x="41" y="16" font-size="10.5" fill="white" text-anchor="middle">Entender</text>
+                <rect x="96" width="82" height="24" rx="4" fill="#4aa3e0" />
+                <text x="137" y="16" font-size="10.5" fill="white" text-anchor="middle">Explorar</text>
+                <rect x="200" width="64" height="24" rx="4" fill="#ff9f43" />
+                <text x="232" y="16" font-size="10.5" fill="white" text-anchor="middle">Criar</text>
+                <rect x="268" width="44" height="24" rx="4" fill="#2fb56a" />
+                <text x="290" y="16" font-size="9.5" fill="white" text-anchor="middle">Compart.</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+      </section>
+
+      <aside class="card">
+        <h3 style="margin-top:0;margin-bottom:6px">Resumo técnico</h3>
+        <ul style="margin:8px 0 12px;color:var(--muted);padding-left:18px">
+          <li><strong>Macro:</strong> Planejar → Construir → Finalizar (sequência).</li>
+          <li><strong>Micro (ciclo):</strong> Entender → Explorar ↔ Entender → Criar → Compartilhar (iterativo).</li>
+          <li><strong>Propósito:</strong> permitir iteração e validação dentro de cada fase macro.</li>
+        </ul>
+
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small">Gerado automaticamente — edição técnica disponível. Versão: 1.0</div>
+    </footer>
+  </div>
+</body>
+</html>
