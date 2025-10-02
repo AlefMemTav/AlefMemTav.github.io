@@ -1,0 +1,114 @@
+/* Reset básico e configurações do corpo da página */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden; /* Evita barras de rolagem */
+}
+
+/* Container principal que divide a tela */
+.split-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo padrão para cada seção (metade da tela) */
+.split-section {
+    width: 50%;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: width 0.5s ease; /* Efeito de transição suave */
+    overflow: hidden;
+}
+
+/* Efeito ao passar o mouse: a seção expande */
+.split-section:hover {
+    width: 60%;
+}
+
+.split-section:hover .content {
+    transform: scale(1.05); /* Leve zoom no conteúdo */
+}
+
+/* Conteúdo dentro de cada seção */
+.content {
+    max-width: 500px;
+    transition: transform 0.5s ease;
+}
+
+/* --- Seção Wheres --- */
+.wheres-section {
+    background-color: #3B82F6; /* Azul da imagem */
+    color: #F97316; /* Laranja da imagem */
+}
+
+.logo-wheres {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.wheres-section p {
+    font-size: 1.2rem;
+    color: #fff; /* Texto branco para melhor contraste */
+}
+
+
+/* --- Seção Malu --- */
+.malu-section {
+    background-color: #f4f4f5; /* Um cinza claro para um fundo neutro */
+    color: #333;
+}
+
+.malu-section h1 {
+    font-size: 4rem;
+    color: #8B5CF6; /* Roxo do "Planejar" no diagrama */
+    margin-bottom: 10px;
+}
+
+.malu-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.diagrama-malu {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column; /* Empilha as seções verticalmente */
+    }
+
+    .split-section {
+        width: 100%;
+        height: 50vh; /* Cada seção ocupa metade da altura */
+    }
+
+    .split-section:hover {
+        width: 100%;
+        height: 55vh; /* Leve expansão vertical */
+    }
+
+    .malu-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .wheres-section p, .malu-section p {
+        font-size: 1rem;
+    }
+}
