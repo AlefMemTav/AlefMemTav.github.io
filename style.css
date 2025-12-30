@@ -1,114 +1,290 @@
-/* Reset básico e configurações do corpo da página */
-body, html {
+:root {
+    /* Color Palette "Deep Engineering" */
+    --bg-color: #0a0a0c;
+    /* Almost black */
+    --surface-color: #16161a;
+    --text-primary: #fffffe;
+    --text-secondary: #94a1b2;
+    --accent-color: #7f5af0;
+    /* Vibrant purple */
+    --accent-glow: rgba(127, 90, 240, 0.2);
+    --code-font: 'Fira Code', monospace;
+    --body-font: 'Inter', sans-serif;
+}
+
+* {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    overflow: hidden; /* Evita barras de rolagem */
-}
-
-/* Container principal que divide a tela */
-.split-container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-/* Estilo padrão para cada seção (metade da tela) */
-.split-section {
-    width: 50%;
-    height: 100vh; /* Ocupa 100% da altura da tela */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Glass Header */
+.glass-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    padding: 1rem 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: var(--code-font);
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
     text-decoration: none;
-    transition: width 0.5s ease; /* Efeito de transição suave */
-    overflow: hidden;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.3s;
 }
 
-/* Efeito ao passar o mouse: a seção expande */
-.split-section:hover {
-    width: 60%;
+.nav-links a:hover {
+    color: var(--accent-color);
 }
 
-.split-section:hover .content {
-    transform: scale(1.05); /* Leve zoom no conteúdo */
+.btn-primary {
+    border: 1px solid var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--accent-color) !important;
 }
 
-/* Conteúdo dentro de cada seção */
-.content {
-    max-width: 500px;
-    transition: transform 0.5s ease;
+.btn-primary:hover {
+    background: var(--accent-color);
+    color: white !important;
 }
 
-/* --- Seção Wheres --- */
-.wheres-section {
-    background-color: #3B82F6; /* Azul da imagem */
-    color: #F97316; /* Laranja da imagem */
+/* Hero Section */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
 }
 
-.logo-wheres {
-    max-width: 80%;
-    height: auto;
-    margin-bottom: 20px;
+.hero-content {
+    max-width: 800px;
 }
 
-.wheres-section p {
-    font-size: 1.2rem;
-    color: #fff; /* Texto branco para melhor contraste */
+.greeting {
+    color: var(--accent-color);
+    font-family: var(--code-font);
+    margin-top: 5rem;
+    margin-bottom: 1rem;
 }
 
-
-/* --- Seção Malu --- */
-.malu-section {
-    background-color: #f4f4f5; /* Um cinza claro para um fundo neutro */
-    color: #333;
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
-.malu-section h1 {
-    font-size: 4rem;
-    color: #8B5CF6; /* Roxo do "Planejar" no diagrama */
-    margin-bottom: 10px;
+.highlight {
+    background: linear-gradient(to right, var(--accent-color), #2cb67d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.malu-section p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
+.bio {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
 }
 
-.diagrama-malu {
-    max-width: 90%;
-    height: auto;
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface-color);
+    color: var(--text-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    background: #23232a;
+}
+
+/* Sections */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #23232a;
+    flex: 1;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--surface-color);
+    padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s, border-color 0.3s;
 }
 
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.card-header h3 {
+    margin-bottom: 0.5rem;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack span {
+    font-family: var(--code-font);
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    background: rgba(127, 90, 240, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.project-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.key-metrics {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.key-metrics li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.link-code {
+    font-family: var(--code-font);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-family: var(--code-font);
+}
+
+.skill-category p {
+    color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 4rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 4rem;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #555;
+    font-family: var(--code-font);
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .split-container {
-        flex-direction: column; /* Empilha as seções verticalmente */
-    }
-
-    .split-section {
-        width: 100%;
-        height: 50vh; /* Cada seção ocupa metade da altura */
-    }
-
-    .split-section:hover {
-        width: 100%;
-        height: 55vh; /* Leve expansão vertical */
-    }
-
-    .malu-section h1 {
+    h1 {
         font-size: 2.5rem;
     }
 
-    .wheres-section p, .malu-section p {
-        font-size: 1rem;
+    .nav-links {
+        display: none;
+    }
+
+    /* Simple hide for mobile */
+    .hero {
+        height: auto;
+        padding: 6rem 1rem;
     }
 }

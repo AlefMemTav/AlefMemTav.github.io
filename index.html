@@ -1,29 +1,173 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlefMemTav</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Portfolio of Pedro Lucas Garcia - Software Engineer specializing in Scalable Backend, Clean Architecture, and AI Integration.">
+    <title>Pedro Lucas Garcia | Software Engineer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="split-container">
-        <a class="split-section wheres-section">
-            <div class="content">
-                <img src="assets/wheres.png" alt="Logo Wheres" class="logo-wheres">
-                <p>Wheres te ajuda a encontrar lugares, produtos, serviços, eventos, atividades etc...</p>
+
+    <header class="glass-header">
+        <nav>
+            <div class="logo">&lt;PLG /&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Stack</a></li>
+                <li><a href="#contact" class="btn-primary">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="hero-content">
+                <p class="greeting">Hi, I'm Pedro Lucas Garcia</p>
+                <h1>Building <span class="highlight">scalable systems</span> <br> and high-performance backends.</h1>
+                <p class="bio">
+                    Software Engineer with a focus on <strong>Clean Architecture</strong> and <strong>Domain-Driven
+                        Design (DDD)</strong>.
+                    Proven track record in accelerating feature delivery by 50% and optimizing data pipelines by 10x
+                    using hardware acceleration.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://github.com/AlefMemTav" target="_blank" class="btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.05-.015-2.055-3.33.72-4.035-1.605-4.035-1.605-.54-1.38-1.335-1.755-1.335-1.755-1.08-.735.09-.72.09-.72 1.2.075 1.83 1.23 1.83 1.23 1.065 1.815 2.805 1.29 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405 1.02 0 2.04.135 3 .405 2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.285 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/pedrolucasgarcia" target="_blank"
+                        class="btn-secondary">LinkedIn</a>
+                </div>
             </div>
-        </a>
-        <a class="split-section malu-section">
-            <div class="content">
-                <h1>MALU</h1>
-                <p>Metodologia Amigável, Leve e Universal.</p>
-                <img src="assets/malu.jpg" alt="Ciclo da Metodologia Malu" class="diagrama-malu">
+        </section>
+
+        <section id="projects" class="container">
+            <h2 class="section-title">Featured Engineering</h2>
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="card-header">
+                        <h3>Auto Video Cutter</h3>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Redis/RQ</span>
+                            <span>Docker</span>
+                            <span>CUDA</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Open-source toolkit for automated video editing using AI. Implemented an asynchronous queue
+                        architecture for massive processing.
+                    </p>
+                    <ul class="key-metrics">
+                        <li>🚀 <strong>10x faster</strong> processing using NVIDIA NVENC.</li>
+                        <li>🤖 Integrated Faster-Whisper & MediaPipe for smart cropping.</li>
+                    </ul>
+                    <a href="https://github.com/AlefMemTav/auto-video-cutter/blob/master/docs/architecture.md"
+                        class="link-code">View Architecture →</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-header">
+                        <h3>Wheres (Startup)</h3>
+                        <div class="tech-stack">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>Kafka</span>
+                            <span>Angular</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Co-founded and architected a scalable platform strictly enforcing Clean Architecture and
+                        Domain-Driven Design (DDD).
+                    </p>
+                    <ul class="key-metrics">
+                        <li>⚡ Accelerated frontend delivery by <strong>50%</strong> via custom micro-framework.</li>
+                        <li>🛡️ Achieved high decoupling and testability.</li>
+                    </ul>
+                    <!-- <a href="#" class="link-code">View Case Study →</a> -->
+                </article>
+
+                <article class="project-card">
+                    <div class="card-header">
+                        <h3>Apita Cidadão (Federal Police)</h3>
+                        <div class="tech-stack">
+                            <span>Node.js</span>
+                            <span>Fastify</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Helped create an online reporting platform to combat crimes related to sports betting.
+                    </p>
+                    <ul class="key-metrics">
+                        <li>✅ Increased test coverage by <strong>80%</strong>.</li>
+                        <li>🔒 Focused on security and high availability.</li>
+                    </ul>
+                </article>
+                <article class="project-card" style="border-color: var(--accent-color);">
+                    <div class="card-header">
+                        <h3>MALU Methodology</h3>
+                        <div class="tech-stack">
+                            <span>Research</span>
+                            <span>Software Engineering</span>
+                            <span>Wicked Problems Solving</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Proprietary software development methodology created as a Capstone Project at the University of
+                        Brasília. Designed to solve wicked problems in complex contexts.
+                    </p>
+                    <ul class="key-metrics">
+                        <li>🎓 <strong>Academic Innovation:</strong> Developed new heuristics for software process
+                            management.</li>
+                        <li>📘 <strong>Research Focus:</strong> Bridges the gap between theoretical models and agile
+                            application.</li>
+                    </ul>
+                    <!-- <a href="#" class="link-code">Read the Paper (PDF) →</a> -->
+                </article>
             </div>
-        </a>
-    </div>
+        </section>
+
+        <section id="skills" class="container skills-section">
+            <h2 class="section-title">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <p>Java (Spring Boot), Python (Django/FastAPI), Node.js, C++</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Infrastructure & Data</h3>
+                    <p>Docker, Kubernetes, AWS, Redis, Kafka, PostgreSQL, Elasticsearch</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Concepts</h3>
+                    <p>Clean Architecture, SOLID, DDD, Microservices, CI/CD</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Looking for a Software Engineer? <a href="mailto:pedrolucasgarcia@hotmail.com">Let's Talk.</a></p>
+        <p class="copyright">© 2025 Pedro Lucas Garcia.</p>
+    </footer>
+
 </body>
+
 </html>
